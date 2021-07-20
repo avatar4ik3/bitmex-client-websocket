@@ -5,12 +5,12 @@ using Bitmex.Client.Websocket.Messages;
 
 namespace Bitmex.Client.Websocket.Responses.Instruments
 {
-    public class InstrumentResponse : ResponseBase
+    public class InstrumentResponse : ResponseBase<Instrument>
     {
         /// <inheritdoc />
         public override MessageType Op => MessageType.Instrument;
 
-        public Instrument[] Data { get; set; }
+       
 
         internal static bool TryHandle(string response, ISubject<InstrumentResponse> subject)
         {

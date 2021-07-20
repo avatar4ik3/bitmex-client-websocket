@@ -4,11 +4,9 @@ using Bitmex.Client.Websocket.Messages;
 
 namespace Bitmex.Client.Websocket.Responses.Liquidation
 {
-    public class LiquidationResponse : ResponseBase
+    public class LiquidationResponse : ResponseBase<Liquidation>
     {
         public override MessageType Op => MessageType.Position;
-
-        public Liquidation[] Data { get; set; }
 
         internal static bool TryHandle(string response, ISubject<LiquidationResponse> subject)
         {

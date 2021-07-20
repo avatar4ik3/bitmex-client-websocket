@@ -7,17 +7,14 @@ namespace Bitmex.Client.Websocket.Responses.Fundings
     /// <summary>
     /// Fundings response
     /// </summary>
-    public class FundingResponse : ResponseBase
+    public class FundingResponse : ResponseBase<Funding>
     {
         /// <summary>
         /// Operation type
         /// </summary>
         public override MessageType Op => MessageType.Funding;
 
-        /// <summary>
-        /// All latest fundings
-        /// </summary>
-        public Funding[] Data { get; set; }
+        
 
         internal static bool TryHandle(string response, ISubject<FundingResponse> subject)
         {

@@ -7,15 +7,11 @@ namespace Bitmex.Client.Websocket.Responses.Books
     /// <summary>
     /// Order book L2 diff response
     /// </summary>
-    public class BookResponse : ResponseBase
+    public class BookResponse : ResponseBase<BookLevel>
     {
         /// <inheritdoc />
         public override MessageType Op => MessageType.OrderBook;
 
-        /// <summary>
-        /// Order book updates
-        /// </summary>
-        public BookLevel[] Data { get; set; }
 
         internal static bool TryHandle(string response, ISubject<BookResponse> subject, string topicName)
         {

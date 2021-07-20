@@ -4,11 +4,9 @@ using Bitmex.Client.Websocket.Messages;
 
 namespace Bitmex.Client.Websocket.Responses.Positions
 {
-    public class PositionResponse : ResponseBase
+    public class PositionResponse : ResponseBase<Position>
     {
         public override MessageType Op => MessageType.Position;
-
-        public Position[] Data { get; set; }
 
         internal static bool TryHandle(string response, ISubject<PositionResponse> subject)
         {

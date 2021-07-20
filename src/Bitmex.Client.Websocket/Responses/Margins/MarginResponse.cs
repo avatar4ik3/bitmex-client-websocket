@@ -4,11 +4,9 @@ using Bitmex.Client.Websocket.Messages;
 
 namespace Bitmex.Client.Websocket.Responses.Margins
 {
-    public class MarginResponse : ResponseBase
+    public class MarginResponse : ResponseBase<Margin>
     {
         public override MessageType Op => MessageType.Margin;
-
-        public Margin[] Data { get; set; }
 
         internal static bool TryHandle(string response, ISubject<MarginResponse> subject)
         {

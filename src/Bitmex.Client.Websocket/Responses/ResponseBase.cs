@@ -6,8 +6,10 @@ namespace Bitmex.Client.Websocket.Responses
     /// <summary>
     /// Base message for every response
     /// </summary>
-    public class ResponseBase : MessageBase
+    public class ResponseBase<T> : MessageBase
     {
+
+        public T[] Data { get; set; }
         /// <summary>
         /// The type of the message. Types:
         /// 'partial'; This is a table image, replace your data entirely.

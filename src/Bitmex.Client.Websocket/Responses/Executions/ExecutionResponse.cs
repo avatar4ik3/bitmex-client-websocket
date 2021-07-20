@@ -4,11 +4,10 @@ using System.Reactive.Subjects;
 
 namespace Bitmex.Client.Websocket.Responses.Executions
 {
-    public class ExecutionResponse : ResponseBase
+    public class ExecutionResponse : ResponseBase<Execution>
     {
         public override MessageType Op => MessageType.Execution;
 
-        public Execution[] Data { get; set; }
 
         internal static bool TryHandle(string response, ISubject<ExecutionResponse> subject)
         {
